@@ -1,0 +1,38 @@
+# WordPress
+wp-config.php
+wp-content/backups-dup-lite/
+wp-content/backups-dup-pro/
+wp-content/*.zip
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/blogs.dir/
+wp-content/languages/
+wp-content/advanced-cache.php
+wp-content/db.php
+wp-content/object-cache.php
+wp-content/maint-mode-cache.php
+*.log
+error_log
+.htaccess.bk
+
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDEs and Tools
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# OSPanel/Server
+.well-known/
+cgi-bin/
