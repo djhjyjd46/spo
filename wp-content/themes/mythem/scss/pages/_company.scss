@@ -1,0 +1,177 @@
+.page-company {
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 112px;
+
+
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+
+        }
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        img {
+            width: 591px;
+            height: 403px;
+
+            @media (max-width: $mobile) {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            @media (max-width: $mobile) {
+                flex-direction: column;
+
+                gap: 16px;
+            }
+
+            p {
+                @include fluid-text(18, 16);
+            }
+
+        }
+
+        .block-inner-inner {
+            display: flex;
+            justify-content: flex-start;
+            gap: 24px;
+            align-items: flex-end;
+
+            @media (max-width: $mobile) {
+                flex-wrap: wrap;
+            }
+
+            .block-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 24px;
+
+                @media (max-width: $mobile) {
+                    flex-wrap: wrap;
+                }
+
+                .block {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 24px;
+                    max-width:228px;
+                    min-height: 140px;
+                    border-radius: 16px;
+                    color: rgba(68, 68, 68, 1);
+                    max-height: 147px;
+                    text-transform: uppercase;
+
+                    @media (max-width: $mobile) {
+                        width: calc(50% - 16px);
+                    }
+
+                    span {
+                        font-weight: 600;
+                        @include fluid-text(48, 32);
+                        color: $main-color;
+                        margin-bottom: 16px;
+                        color: rgba(68, 68, 68, 1);
+                        text-transform: uppercase;
+                        opacity: 0.7;
+
+                        @media (max-width: $mobile) {
+                            margin-bottom: 8px;
+                        }
+                    }
+
+                    &__text {
+                        @include fluid-text(24, 18);
+                        color: rgba(68, 68, 68, 1);
+                        text-transform: uppercase;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+}
+
+.serteficat-swiper {
+    width: 100%;
+    height: auto; // Автоматическая высота для адаптивности
+    margin-bottom: 60px;
+
+    @media (max-width: $mobile) {
+        margin-bottom: 24px;
+
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0; // Запрещаем слайдам сжиматься
+        width: 240px; // Базовая ширина слайда
+        height: auto; // Автоматическая высота
+        text-align: center; // Центрирование содержимого
+        background-color: $white; // Фон для наглядности
+        border-radius: 8px; // Радиус углов
+        box-shadow: $boxshadow; // Тень из переменной
+        overflow: hidden; // Скрываем выходящее содержимое
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; // Убедитесь, что изображение масштабируется правильно
+        }
+    }
+}
+
+.serteficat-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px; // Отступ сверху для пагинации
+    gap: 8px; // Отступ между точками пагинации
+
+    .swiper-pagination-bullet {
+        width: 12px; // Ширина точки
+        height: 12px; // Высота точки
+        background-color: $black; // Цвет точки
+        border-radius: 50%; // Круглая форма
+        opacity: 0.3; // Прозрачность
+
+        &.swiper-pagination-bullet-active {
+            background-color: $main-color; // Цвет активной точки
+            opacity: 1; // Полная непрозрачность для активной точки
+        }
+    }
+}
+.serteficat-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+margin-bottom: 112px;
+@media (max-width: $mobile) {
+  margin-bottom: 24px;
+}
+
+}

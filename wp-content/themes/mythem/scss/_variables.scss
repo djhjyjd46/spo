@@ -1,0 +1,51 @@
+// Три Нити - Цветовая палитра проекта
+$blue: #007DC6; // Основной оранжевый цвет компании
+$blue-hover: #209DE6; // Темный оттенок оранжевого для hover эффектов
+$black: #222222; // Основной темный цвет (для текста)
+$white: #ffffff; // Чистый белый цвет
+$bg-color: #FDFDFD; // Светло-серый цвет фона
+$gray-light: #F2F2F2; // Светлый серый для фонов
+$gray: #e5e5e5; // Серый для границ
+$gray-dark: #737373; // Темный серый для вторичного текста
+
+
+// Основные цвета (совместимость с существующим кодом)
+$main-color: $blue;
+$main-hover: $blue-hover;
+$color-hover: $blue-hover;
+
+:root {
+  --color-main: #{$main-color};
+  --color-main-hover: #{$main-hover};
+  --color-text: #{$black};
+  --color-background: #{$white};
+  --color-border: #{$gray};
+}
+
+// Типографика
+$font-name: Exo2;
+$font-family-base: '#{$font-name}', sans-serif; // Современный шрифт
+// Сетка и контейнеры  
+$container-width: 1200px; // Максимальная ширина основного контейнера
+$container-padding: 10px; // Горизонтальные отступы контейнера
+
+// Иконки
+$svg-icon-color: $main-color;
+
+// Кнопки
+$button-radius: 8px; // Современный радиус
+$button-width: 282px;
+$button-height: 60px;
+$button-height-mobile: 60px;
+$button-size: 18px;
+$button-weight: 600;
+$button-background: $main-color;
+$button-color: $white;
+$button-hover: $main-hover;
+
+// Тени и эффекты
+$boxshadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$boxshadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Переходы
+$transition-base: all 0.2s ease-in-out;

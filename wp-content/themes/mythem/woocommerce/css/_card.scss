@@ -1,0 +1,115 @@
+.product-card {
+    width: 100%;
+    height: auto;
+    min-height: 289px;
+    box-shadow: 0px 1px 8px 0px #33333326;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @media (min-width: $mobile) {
+        width: 282px;
+        min-height: 503px;
+        padding: 12px;
+    }
+
+    img {
+        width: 256px;
+        height: 256px;
+        object-fit: cover;
+
+
+        @media (max-width: $mobile) {
+            width: 148px;
+            height: 148px;
+        }
+
+        margin-bottom: 8px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+
+        @media (max-width: $mobile) {
+            font-size: 10px;
+        }
+    }
+
+
+    .stock-status {
+        font-size: 14px;
+
+        @media (max-width: $mobile) {
+            font-size: 8px;
+        }
+    }
+
+    .button {
+        font-weight: 600;
+        height: 30px;
+
+        @media (min-width: $mobile) {
+            height: 52px;
+        }
+    }
+
+    .button-cart img {
+        width: 13px;
+        height: auto;
+
+        @media (min-width: $mobile) {
+            width: 28px;
+        }
+    }
+}
+
+.product-card__price {
+    .woocommerce-Price-amount {
+        bdi {
+            font-weight: 700;
+            @include fluid-text(24, 14);
+            font-size: 24px;
+
+            @media (max-width: $mobile) {
+                font-size: 14px;
+            }
+
+            .woocommerce-Price-currencySymbol {
+                font-weight: 700;
+                font-size: 18px;
+
+                @media (max-width: $mobile) {
+                    font-size: 13px;
+                }
+
+                text-transform: uppercase;
+
+            }
+        }
+
+    }
+}
+
+.button-cart:active {
+    transition: all 0.2s ease;
+    transform: scale(0.95);
+}
+
+.product-card__image {
+
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+}

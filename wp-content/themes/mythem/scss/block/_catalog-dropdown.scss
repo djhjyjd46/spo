@@ -1,0 +1,125 @@
+// Стили для выпадающего меню каталога
+.menu-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog-menu-item {
+    position: static;
+
+    .catalog-dropdown {
+        position: absolute;
+        top: 100%;
+        left: -12px;
+        background: #fafafa;
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        min-width: 200px;
+        padding: 12px;
+        transform: translateY(-11px);
+
+
+        &__content {
+
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+        }
+
+
+        .dropdown-category {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-bottom: 2px;
+
+            img {
+                min-width: 70px;
+                width: 70px;
+                min-height: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 4px;
+                background-color: #f8f8f8;
+            }
+
+            span {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            &:hover {
+                background-color: #f5f5f5;
+                color: #FF7E00;
+                transform: translateX(2px);
+            }
+        }
+    }
+
+    // Показываем dropdown при наведении на desktop
+    @media (min-width: 1024px) {
+        &:hover .catalog-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    // На мобильных показываем по клику
+    @media (max-width: 768px) {
+        &.open .catalog-dropdown {
+            opacity: 1;
+            visibility: visible;
+            // transform: translateY(0);
+        }
+    }
+}
+
+// Анимация для главного навигационного меню
+.main-menu-list {
+    .catalog-menu-item {
+        >a {
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #FF7E00;
+            }
+
+            // Стили для стрелки
+            .catalog-arrow {
+                margin-left: 4px;
+                margin-bottom: 5px;
+                transition: transform 0.2s ease;
+            }
+        }
+
+        // Поворачиваем стрелку при наведении на desktop
+        @media (min-width: 1024px) {
+            &:hover .catalog-arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        // Поворачиваем стрелку при открытии на mobile
+        @media (max-width: 1023px) {
+            &.open .catalog-arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.popular-product {
+    position: relative;
+
+
+}
+
+.otzivi {
+    position: relative;
+
+    &::before {
+        content: url('../images/bg-el/3.webp');
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+.popular-prev,
+.popular-next {
+    svg {
+        circle {
+
+            fill: #444444;
+
+            &:hover {
+                fill: #8a8686; // Оранжевый цвет проекта при наведении
+            }
+        }
+
+        path {
+            fill: #F3F3F3;
+        }
+    }
+}
+
+.popular-product-card {
+    width: 100%;
+    height: 503px;
+    box-shadow: 0px 1px 8px 0px #33333326;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 620px) {
+        width: 100%;
+        min-height: 420px;
+        height: auto;
+
+    }
+
+    @media (max-width: 420px) {
+        width: 100%;
+        height: auto;
+
+    }
+
+    img {
+        margin-bottom: 8px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    &__actions {
+        margin-bottom: 17px;
+    }
+}
+
+.popular-product-card__price {
+    .woocommerce-Price-amount {
+        bdi {
+            font-weight: 700;
+            font-size: 24px;
+
+
+            .woocommerce-Price-currencySymbol {
+                font-weight: 700;
+                font-size: 18px;
+                text-transform: uppercase;
+
+            }
+        }
+
+    }
+}
+
+.popular-product-item .product-card {
+    @include zoom(0.95);
+}

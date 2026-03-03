@@ -1,0 +1,110 @@
+/* SCSS Reset + Normalize (Гибридный вариант) */
+
+// Box-sizing для удобной работы с размерами
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Убираем стандартные отступы и обеспечиваем предсказуемость текста
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+// Улучшаем типографику
+body {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Обеспечиваем читаемость текста и ссылок
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+// Очищаем списки, но сохраняем стилизацию, если будет задана явно
+ul,
+ol {
+  list-style: none;
+}
+
+// Делаем изображения и видео адаптивными
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Улучшаем доступность и поведение элементов формы
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+// Убираем избыточные стили элементов форм в iOS
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+// Гарантируем предсказуемость блочных элементов
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+// Убираем обводку у элементов при фокусе (оставляем только для клавиатуры)
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid $main-color;
+}
+
+// Убираем выделение текста при нажатии (по желанию)
+* {
+  user-select: auto;
+}

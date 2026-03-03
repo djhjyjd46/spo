@@ -1,0 +1,89 @@
+// Стили для выпадающего меню каталога
+.catalog-menu-item {
+    position: relative;
+
+    .catalog-dropdown {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        &.block {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        // Треугольник для стрелки
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+            filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        a {
+            display: block;
+            padding: 8px 12px;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 2px 0;
+
+            &:hover {
+                color: #FF7E00;
+                background-color: #FFF7ED;
+                transform: translateX(4px);
+            }
+        }
+
+        .grid {
+            gap: 8px;
+        }
+
+        .mt-4 {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #f3f4f6;
+
+            a {
+                color: #FF7E00;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                    background-color: transparent;
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    // Отступы для основного меню
+    &:hover .catalog-dropdown {
+        display: block;
+    }
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 768px) {
+    .catalog-dropdown {
+        min-width: 280px !important;
+        left: -50px !important;
+
+        .grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+}

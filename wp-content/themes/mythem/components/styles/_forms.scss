@@ -1,0 +1,110 @@
+.contact-form {
+    height: 431px;
+    color: $white;
+    padding: 74px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.9) 14.57%, rgba(0, 0, 0, 0.8) 31.29%, rgba(0, 0, 0, 0.7) 49.39%, rgba(0, 0, 0, 0.6) 65.86%, rgba(0, 0, 0, 0.5) 100%);
+        opacity: 0.89;
+        z-index: 1; // Изменяем z-index чтобы градиент был поверх изображения
+        pointer-events: none; // Отключаем события мыши для псевдоэлемента
+    }
+
+    // Контент должен быть поверх градиента
+    .container {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 48px 0;
+        height: 547px;
+    }
+
+
+    .container {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        @include fluid-text(36, 28);
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    p {
+        margin-bottom: 28px;
+
+        @media (min-width: $mobile) {
+            margin-bottom: 32px;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+
+        @media (min-width: $mobile) {
+            gap: 16px;
+        }
+
+        input {
+            width: 277px;
+            height: $button-height;
+            border-radius: $button-radius;
+            background-color: $white;
+            color: $black;
+            font-size: 18px;
+            padding: 10px 20px;
+
+            @media (max-width: $mobile) {
+                width: 100%;
+            }
+
+        }
+
+        button {
+            width: 282px;
+            height: $button-height;
+
+            @media (max-width: $mobile) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__conf {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        max-width: 668px;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $main-color;
+            text-decoration: underline;
+        }
+
+        .policy-link-white {
+            color: $white;
+        }
+    }
+
+}

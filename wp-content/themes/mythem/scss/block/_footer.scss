@@ -1,0 +1,170 @@
+.footer {
+    position: relative;
+    padding: 80px 0 72px;
+    background-color: rgb(51, 51, 51);
+
+    color: $white;
+
+    @media (max-width: $mobile) {
+        font-weight: 300;
+        padding: 40px 0;
+        height: auto;
+
+    }
+
+
+
+    h3 {
+        @include fluid-text(24, 20);
+        margin-bottom: 7px;
+
+
+    }
+
+
+    .container {
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer__info {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+
+        .footer__logo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 250px;
+
+            img {
+                width: 100%;
+                max-width: 182px;
+                height: auto;
+                margin-bottom: 16px;
+            }
+        }
+
+        .footer__logo-time {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        .footer__links {
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            a {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .footer__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            @include fluid-text(18, 16);
+
+            @media (max-width: $mobile) {
+                margin-bottom: 40px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+
+
+                @media (max-width: $mobile) {
+                    gap: 20px;
+
+                    li {
+                        width: auto;
+
+                        a {
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+
+                    }
+                }
+
+            }
+
+
+
+        }
+
+        .footer__contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            @media (max-width: $mobile) {
+                margin-bottom: 35px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 23px;
+                font-size: 16px;
+
+            }
+
+            .email {
+                gap: 16px;
+
+                a svg path {
+                    fill: $svg-icon-color;
+                }
+
+            }
+
+            .tel {
+                gap: 20px;
+
+                a svg path {
+                    fill: $svg-icon-color;
+                }
+
+                @media (max-width: $mobile) {
+                    font-size: 18px;
+                }
+            }
+
+            .footer__socials div {
+                display: flex;
+                flex-direction: row;
+                gap: 6px;
+            }
+
+            .mess {
+                gap: 8px;
+
+                @media (max-width: $mobile) {
+                    font-size: 18px;
+
+                }
+            }
+
+            .footer__tel {
+                gap: 12px;
+            }
+        }
+    }
+}

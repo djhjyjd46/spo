@@ -1,0 +1,57 @@
+.faq {
+
+    svg {
+        min-width: 24px;
+    }
+
+    &__accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: auto;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+
+
+
+        details {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+
+
+
+            summary {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                appearance: none;
+
+                span {
+                    @include fluid-text(24, 18);
+                    margin-bottom: 12px;
+                }
+
+                svg {
+                    transition: transform 0.3s ease;
+                }
+
+            }
+
+            &[open] summary svg {
+                transform: rotate(-90deg);
+            }
+
+
+            .faq__content {
+                @include fluid-text(18, 14);
+
+            }
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+    }
+}

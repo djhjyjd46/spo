@@ -1,0 +1,68 @@
+.modal-phone {
+    h2 {
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 100%;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-weight: 300;
+        line-height: 130%;
+        margin-bottom: 32px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        input {
+            border: 1px solid rgba(213, 216, 217, 1);
+            width: auto;
+
+            height: 64px;
+            padding: 23px;
+        }
+
+        label {
+            margin-bottom: 32px;
+        }
+
+        .custom-checkbox {
+            p {
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 140%;
+                color: rgba(87, 87, 86, 1);
+                margin-bottom: 16px;
+            }
+
+            span {
+                border: solid 2px $white; // Оставляем рамку светлой
+                border-color: $black; // Черная рамка для чекбокса
+
+                &::before {
+                    border-right-color: $black; // Черная галочка
+                    border-bottom-color: $black;
+                }
+            }
+
+            input:checked+span::before {
+                border-right-color: $black; // Черная галочка при активном состоянии
+                border-bottom-color: $black;
+            }
+
+            input::placeholder {
+                color: $black;
+                opacity: 1;
+            }
+
+        }
+    }
+
+    button {
+        width: 282px;
+        height: 64px;
+    }
+}

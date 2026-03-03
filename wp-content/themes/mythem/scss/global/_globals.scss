@@ -1,0 +1,126 @@
+/**
+ * Глобальные стили.
+ * Содержит базовые стили для:
+ * - Элементов body, a, button, input
+ * - Заголовков разных уровней
+ * - Типографики (размеры, отступы)
+ * - Основных переходов и анимаций
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+.front-main {
+  @media (min-width: $mobile) {
+    position: relative;
+    top: -140px
+  }
+}
+
+.bg-el,
+main {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    background: url('../images/bg-el/1.avif') no-repeat top;
+    position: absolute;
+    z-index: -100;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main-container {
+  margin-top: 50px;
+
+  @media (min-width: $mobile) {
+    margin-top: 148px;
+  }
+}
+
+body {
+  @include fluid-text(18, 16);
+  font-weight: 400;
+  line-height: 1.4;
+  color: $black;
+  background-color: $bg-color;
+  // background-color: #5cd593;
+}
+
+section {
+  padding: 36px 0;
+
+  @media (min-width: $mobile) {
+    padding: 56px 0;
+  }
+}
+
+// Применение цвета SVG
+.svg {
+  path {
+    fill: $svg-icon-color;
+  }
+}
+
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: 0.2s;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+}
+
+
+.h1,
+
+h1,
+.h1,
+h2,
+.h2 {
+  @include fluid-text(40, 24);
+
+  margin-bottom: 56px;
+
+  @media (min-width: $mobile) {
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+h1 {
+  font-weight: 700;
+}
+
+
+h3,
+.h3 {
+  @include fluid-text(24, 20);
+}
+
+h4,
+.h4 {
+  @include fluid-text(20, 20);
+  margin-bottom: 16px;
+}
+
+p {
+  @include fluid-text(18, 16);
+}

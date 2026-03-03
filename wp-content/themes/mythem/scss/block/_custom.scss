@@ -1,0 +1,57 @@
+.preimuschestva__item {
+    width: calc(25% - 33px);
+
+    @media (max-width: $mobile) {
+        width: 100%;
+
+    }
+}
+
+.cart-notification-modal {
+    border-radius: 8px;
+    background-color: #01010191;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    height: 40px;
+
+
+    .cart-notification-icon,
+    .cart-notification-title {
+        color: #45ff45;
+    }
+}
+
+.pagination {
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .page-numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgba(5, 5, 5, 0.274);
+        color: white;
+
+        @media (max-width: $mobile) {
+            max-width: 30px;
+            min-height: 30px;
+        }
+
+        &.current {
+            background-color: $main-color;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "kubdekor-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme for KubDekor - Belarusian balcony renovation company",
+  "scripts": {
+    "dev": "tailwindcss -i ./wp-content/themes/mythem/css/input-tailwind.css -o ./wp-content/themes/mythem/css/tailwind.css --watch --minify",
+    "build": "tailwindcss -i ./wp-content/themes/mythem/scss/tailwind.css -o ./wp-content/themes/mythem/css/tailwind.css --minify",
+    "minify-js": "node wp-content/themes/mythem/minify-js.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "sass": "^1.90.0",
+    "tailwindcss": "^3.3.0",
+    "terser": "^5.17.6"
+  },
+  "dependencies": {
+    "glider-js": "^1.7.9",
+    "swiper": "^11.0.0"
+  }
+}

@@ -1,0 +1,38 @@
+.hero-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 24px !important;
+    z-index: 10;
+    display: flex;
+    gap: 14px;
+
+    @media (min-width: $mobile) {
+        bottom: 40px !important;
+    }
+
+    li button {
+        background: $black;
+        opacity: 0.5;
+        border: solid 1px white;
+        display: flex;
+        gap: 14px;
+        width: 12px;
+        height: 12px;
+
+        @media (min-width: $mobile) {
+            height: 14px;
+            width: 14px;
+        }
+
+        &.is-active {
+            transform: scale(1.2);
+            background: $main-color;
+            opacity: 1;
+            border: none;
+        }
+    }
+}

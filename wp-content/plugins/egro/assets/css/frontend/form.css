@@ -1,0 +1,39 @@
+.form-error-message {
+    color: #d63638;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-left: 3px solid #d63638;
+    background-color: rgba(214, 54, 56, 0.1);
+}
+
+.form-success-message {
+    color: #00a32a;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-left: 3px solid #00a32a;
+    background-color: rgba(0, 163, 42, 0.1);
+}
+
+button[type="submit"].loading {
+    opacity: 0.7;
+    cursor: wait;
+    position: relative;
+}
+
+button[type="submit"].loading:after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

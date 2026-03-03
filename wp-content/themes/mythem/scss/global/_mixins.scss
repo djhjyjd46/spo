@@ -1,0 +1,110 @@
+/**
+ * Создает адаптивный текст, который изменяет размер в зависимости от ширины экрана
+ * @param {number} $max - Максимальный размер текста в пикселях (для десктопа)
+ **/
+@use "sass:math";
+
+@mixin fluid-text($max: 40, $min: 14) {
+  font-size: clamp(#{$min}px, #{math.div($max, 1920) * 100}vw, #{$max}px);
+}
+
+
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/**
+ * Сбрасывает стандартные стили кнопок
+ * Убирает отступы, фон и границы
+ *
+ * Использование: @include reset-button;
+ */
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+/**
+ * Центрирует содержимое с помощью flexbox
+ * @param {boolean} $isInline - Использовать inline-flex вместо flex
+ *
+ * Использование: @include flex-center();
+ * Использование: @include flex-center(true);
+ */
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  }
+
+  @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Абсолютное центрирование элемента
+ * Элемент должен иметь position: relative у родителя
+ *
+ * Использование: @include abs-center;
+ */
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+/**
+ * Создает квадратный элемент заданного размера
+ * @param {string} $size - Размер стороны квадрата с единицей измерения
+ *
+ * Использование: @include square(50px);
+ */
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+/**
+ * Визуально скрывает элемент, но сохраняет доступность для скринридеров
+ * Используется для элементов, которые должны быть доступны через клавиатуру
+ * но не должны отображаться визуально
+ *
+ * Использование: @include visually-hidden;
+ */
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+
+
+@mixin zoom($scale: 1.05, $duration: 0.3s, $timing-function: ease-in-out) {
+
+  @media (min-width: $mobile) {
+    transition: all $duration $timing-function;
+
+    &:hover {
+      transform: scale($scale);
+      box-shadow: $boxshadow;
+    }
+  }
+}

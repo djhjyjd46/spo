@@ -1,0 +1,221 @@
+/* Сортировка */
+.catalog-sorting {
+    margin-bottom: 32px;
+}
+
+.catalog-sorting span {
+    margin-right: 48px;
+}
+
+
+.sorting-options {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 48px;
+
+    @media (max-width: $mobile) {
+        width: 100%;
+        gap: 25px;
+        overflow-x: auto; // Автоматическая прокрутка
+        white-space: nowrap; // Запрет переноса элементов
+
+        &::-webkit-scrollbar {
+            display: none; // Для Chrome, Safari, Edge
+        }
+
+        scrollbar-width: none;
+    }
+
+    &__item {
+        a {
+            @include fluid-text(16, 14);
+            color: $black;
+        }
+
+        @media (max-width: $mobile) {
+            white-space: nowrap; // Запрет переноса текста
+        }
+
+        &.active {
+            a {
+                color: $main-color;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Фильтры по категориям */
+.catalog-filters {
+    margin-bottom: 30px;
+}
+
+.catalog-filters h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    border-radius: 4px;
+    transition: all ease-in 0.3s;
+    font-size: 16px;
+    font-weight: 600;
+    color: $black;
+    border: 1px solid #999999;
+    height: 39px;
+
+    @media (min-width: $mobile) {
+        height: 48px;
+    }
+
+    a {
+        padding: 10px 20px;
+        width: 100%;
+        height: 100%;
+
+        @media (min-width: $mobile) {
+            padding: 10px 30px;
+        }
+
+    }
+
+    &.active {
+        background: $main-color;
+        border: none;
+
+        a {
+            color: $white;
+        }
+    }
+
+    &:hover {
+        @include zoom;
+
+    }
+}
+
+
+
+
+
+/* Список товаров */
+.catalog-products {
+    margin-top: 20px;
+}
+
+.catalog-productlist {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (max-width: $mobile) {
+        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 282px;
+        height: auto;
+        @include zoom;
+
+        @media (max-width: $mobile) {
+            // max-width: calc(50% - 8px);
+        }
+
+        h3,
+        p {
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+
+            .old-price {
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+        }
+
+        a {
+            button {
+                width: 100%;
+                height: 48px;
+            }
+        }
+    }
+}
+
+.catalog-pagination {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .page-numbers {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: $white;
+        text-decoration: none;
+
+        transition: all 0.3s ease;
+
+        &.current {
+            background-color: $main-color;
+            color: $white;
+        }
+
+        &:hover:not(.current) {
+            background-color: #e6e6e6;
+        }
+
+    }
+
+    /* Стиль для отсутствия товаров */
+    .no-products {
+        text-align: center;
+        padding: 20px;
+
+        color: #666;
+    }
+}

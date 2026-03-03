@@ -1,0 +1,38 @@
+@import 'global/media',
+'global/mixins',
+'variables',
+'global/normolize',
+'global/fonts',
+'global/utils',
+'global/custom',
+'global/globals',
+
+// Здесь импорт компонентов
+
+'../components/comp-styles';
+
+// Здесь можно импортировать блоки
+@import 'block/header',
+'block/hero',
+'block/footer',
+'block/category',
+// 'block/popular-product',
+'block/custom',
+// 'block/partner',
+'block/news',
+// 'block/catalog-dropdown',
+'block/company';
+
+@import 'pages/company',
+'pages/page-articles',
+'pages/service-list',
+'pages/single',
+'pages/dostavka',
+'pages/page-service',
+// 'pages/page-catalog',
+'pages/page-contacts';
+
+// @import '../woocommerce/css/woocustom',
+// '../woocommerce/css/single-product',
+// '../woocommerce/css/card',
+// '../woocommerce/css/cart';

@@ -1,0 +1,23 @@
+.marquee-track-card {
+    width: 127px;
+    height: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 12px 0px #33333326;
+    background-color: #fff;
+
+    img {
+        max-width: 77px;
+
+        @media (min-width: $mobile) {
+            max-width: 170px;
+        }
+    }
+
+    @media (min-width: $mobile) {
+        width: 282px;
+        height: 160px;
+    }
+
+}

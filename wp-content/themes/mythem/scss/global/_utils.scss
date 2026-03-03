@@ -1,0 +1,52 @@
+/**
+ * Утилитарные классы.
+ * Содержит общие служебные классы:
+ * - Контейнер для содержимого
+ * - Классы для скрытия/показа элементов
+ * - Визуальное скрытие элементов
+ * - Вспомогательные классы для адаптивности
+ */
+.main-container,
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $container-padding;
+
+  @media (min-width: $mobile) {
+    max-width: calc($container-width + $container-padding * 2);
+  }
+}
+
+.main-container {
+  margin-bottom: 40px;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.content {
+
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    margin-bottom: 16px;
+  }
+}

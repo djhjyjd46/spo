@@ -1,0 +1,67 @@
+.hero-slide {
+    position: relative; // Добавляем позиционирование для контекста z-index
+
+    &::before {
+        background: linear-gradient(90.5deg, #000000 0.82%, rgba(0, 0, 0, 0.9) 20.99%, rgba(0, 0, 0, 0.8) 36.85%, rgba(0, 0, 0, 0.7) 56.58%, rgba(0, 0, 0, 0.6) 103.31%);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    @media (max-width: $mobile) {
+        height: calc(100vh - 48px);
+    }
+}
+
+.slide-container {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    z-index: 2; // Весь контейнер выше градиента
+}
+
+.hero-slide__content {
+    max-width: 690px;
+    color: #F8F8F8;
+
+    h2 {
+        text-transform: uppercase;
+        @include fluid-text(36, 24);
+        margin-bottom: 16px;
+        font-weight: 600;
+
+        @media (min-width: $mobile) {
+            margin-bottom: 24px;
+        }
+    }
+
+    p {
+        margin-bottom: 40px;
+        font-weight: 500;
+        @include fluid-text(20, 14);
+    }
+}
+
+.hero-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 502px;
+
+    @media (min-width: $mobile) {
+        height: 610px;
+
+    }
+}
